@@ -1,6 +1,17 @@
 package com.rocket.phase1.crew;
 
-public class EnglishCrew {
-    String name;
-    int age;
+import java.util.List;
+
+public class EnglishCrew implements CrewCondition{
+    String crewName;
+    int crewSize;
+    List<Person> crewList;
+    public EnglishCrew(){
+
+    }
+
+    @Override
+    public boolean isEveryoneHealthy() {
+        return true;
+    }
 }
