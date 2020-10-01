@@ -9,6 +9,7 @@
     <bean id="chinese" class="com.rocket.phase1.crew.ChineseCrew"/>
     <bean id="english" class="com.rocket.phase1.crew.EnglishCrew"/>
     <bean id="crew" class="com.rocket.phase1.crew.CrewMember"/>
+
     <context:annotation-config/>
 
 
