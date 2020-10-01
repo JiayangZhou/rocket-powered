@@ -16,6 +16,7 @@ public class CrewMember {
     public CrewMember() {
     }
 
+
     public CrewMember(ChineseCrew chineseCrew, @Nullable EnglishCrew englishCrew) {
         this.chineseCrew = chineseCrew;
         this.englishCrew = englishCrew;
