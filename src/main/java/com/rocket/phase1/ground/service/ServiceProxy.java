@@ -19,7 +19,6 @@ public class ServiceProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object res = method.invoke(request,args);
-
         return res;
     }
 }
