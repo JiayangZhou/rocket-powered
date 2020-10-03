@@ -2,6 +2,8 @@ package com.rocket.phase1;
 
 import com.rocket.phase1.crew.CrewMember;
 import com.rocket.phase1.ground.headquarter.Leader;
+import com.rocket.phase1.ground.service.Request;
+import com.rocket.phase1.ground.service.ServiceProxy;
 import com.rocket.phase1.ground.service.ServiceTeam;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -16,5 +18,11 @@ public class Launch {
         ServiceTeam serviceTeam = (ServiceTeam) applicationContext.getBean("serviceTeam");
 
         Leader leader = new Leader();
+
+        ServiceProxy serviceProxy = new ServiceProxy();
+        serviceProxy.setRequest(crew);
+        Request crewRequest = (Request) serviceProxy.getProxy();
+        crewRequest.requestContent();
+
     }
 }

@@ -1,10 +1,11 @@
 package com.rocket.phase1.crew;
 
+import com.rocket.phase1.ground.service.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.lang.Nullable;
 
-public class CrewMember {
+public class CrewMember implements Request {
     @Autowired
     @Qualifier(value = "chinese")
     // @Autowired is achieved by looking up name, alternatively, we can use @Resource
@@ -23,6 +24,9 @@ public class CrewMember {
     }
 
 
-
+    @Override
+    public void requestContent() {
+        System.out.println("We need the signal for boarding!");
+    }
 }
 
