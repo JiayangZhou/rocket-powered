@@ -14,4 +14,8 @@ public class Leader {
     public Person head(){
         return new Person();
     }
+
+    public OrdersProxy sendOrder(){
+        return new OrdersProxy();
+    }
 }
