@@ -11,15 +11,28 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.rocket.phase1.materials")
 public class Commander implements Request {
     OrdersProxy ordersProxy;
+    Person person;
+    EmergencyOrder emergencyOrder;
+
     @Bean
     public Person head(){
         return new Person();
     }
 
-    public OrdersProxy sendOrder(){
-        return new OrdersProxy();
+    @Bean
+    public EmergencyOrder emergencyOrder(){
+        return new EmergencyOrder(10);
     }
 
+    @Bean
+    public OrdersProxy ordersProxy(){
+        OrdersProxy ordersProxy = new OrdersProxy(this.emergencyOrder);
+        return ordersProxy;
+    }
+
+    public OrdersProxy getOrdersProxy(){
+        return this.ordersProxy;
+    }
     @Override
     public void requestContent() {
         System.out.println("Commander: Hold on, crew members need a good meal before their boarding!");

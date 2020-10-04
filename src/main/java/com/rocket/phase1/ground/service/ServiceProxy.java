@@ -1,5 +1,7 @@
 package com.rocket.phase1.ground.service;
 
+import org.springframework.context.annotation.Configuration;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;

@@ -1,9 +1,16 @@
 package com.rocket.phase1.ground.headquarter;
 
+import org.springframework.context.annotation.Bean;
+
 public class OrdersProxy implements OrderForm{
 
-    private EmergencyOrder emergencyOrder;
-    private NormalOrder normalOrder;
+
+    public EmergencyOrder emergencyOrder;
+    public NormalOrder normalOrder;
+
+    public OrdersProxy(EmergencyOrder emergencyOrder) {
+        this.emergencyOrder = emergencyOrder;
+    }
 
     public void setEmergencyOrder(EmergencyOrder emergencyOrder) {
         this.emergencyOrder = emergencyOrder;
@@ -15,7 +22,6 @@ public class OrdersProxy implements OrderForm{
 
     @Override
     public void lag(int time) {
-
     }
 
     @Override
