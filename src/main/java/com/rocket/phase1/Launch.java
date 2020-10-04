@@ -3,6 +3,7 @@ package com.rocket.phase1;
 import com.rocket.phase1.crew.CrewMember;
 import com.rocket.phase1.ground.headquarter.Commander;
 import com.rocket.phase1.ground.headquarter.EmergencyOrder;
+import com.rocket.phase1.ground.headquarter.OrderForm;
 import com.rocket.phase1.ground.headquarter.OrdersProxy;
 import com.rocket.phase1.ground.service.Request;
 import com.rocket.phase1.ground.service.ServiceProxy;
@@ -21,7 +22,7 @@ public class Launch {
 
         ApplicationContext orderContext = new AnnotationConfigApplicationContext(Commander.class);
         Commander commander = (Commander) orderContext.getBean("commander");
-        EmergencyOrder emergencyOrder = (EmergencyOrder) orderContext.getBean("emergencyOrder");
+        OrderForm emergencyOrder = (OrderForm) orderContext.getBean("emergencyOrder");
         emergencyOrder.lag(10);
 
         // conversation between crew and commander
