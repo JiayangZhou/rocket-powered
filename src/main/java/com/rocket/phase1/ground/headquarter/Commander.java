@@ -39,13 +39,11 @@ public class Commander implements Request {
     }
 
     @Bean
-    public OrderForm orderForm() {
+    public Order orderForm() {
         return new EmergencyOrder();
     }
 
-    public OrdersProxy getOrdersProxy(){
-        return this.ordersProxy;
-    }
+
     @Override
     public void requestContent() {
         System.out.println("Commander: Hold on, crew members need a good meal before their boarding!");

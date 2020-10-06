@@ -1,9 +1,8 @@
 package com.rocket.phase1.ground.headquarter;
 
 
-public class EmergencyOrder implements OrderForm{
+public class EmergencyOrder implements Order {
     int id;
-
     public EmergencyOrder() {
         this.id = 0;
     }
@@ -12,13 +11,9 @@ public class EmergencyOrder implements OrderForm{
     }
 
     @Override
-    public void lag(int time) {
-        System.out.println("Lagging as little as possible!");
-    }
-
-    @Override
-    public boolean sent() {
-        return false;
+    public void send(int time) throws InterruptedException {
+        Thread.sleep(time * 100);
+        System.out.println("Emergency order issued!");
     }
 
     @Override

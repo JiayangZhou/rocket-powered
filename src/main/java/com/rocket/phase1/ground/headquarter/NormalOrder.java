@@ -1,14 +1,17 @@
 package com.rocket.phase1.ground.headquarter;
 
-public class NormalOrder implements OrderForm{
-    @Override
-    public void lag(int time) {
-
+public class NormalOrder implements Order {
+    int id;
+    public NormalOrder() {
+        this.id = 5;
+    }
+    public NormalOrder(int id) {
+        this.id = id;
     }
 
     @Override
-    public boolean sent() {
-        return false;
+    public void send(int time) throws InterruptedException {
+        Thread.sleep(time * 200);
     }
 
     @Override
