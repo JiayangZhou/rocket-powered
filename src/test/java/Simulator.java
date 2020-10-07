@@ -4,9 +4,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Simulator {
     public static void main(String[] args) {
+        // testing log here
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationAop.xml");
         LogService log = applicationContext.getBean("logService", LogService.class);
-
         log.add();
 
 

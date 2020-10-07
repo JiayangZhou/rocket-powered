@@ -46,6 +46,6 @@ public class Commander implements Request {
 
     @Override
     public void requestContent() {
-        System.out.println("Commander: Hold on, crew members need a good meal before their boarding!");
+        System.out.println("Commander: Hold on, it was just a wrong button pressed!");
     }
 }

@@ -18,13 +18,13 @@ public class Launch {
         CrewMember crew = (CrewMember) applicationContext.getBean("crew");
         ServiceTeam serviceTeam = (ServiceTeam) applicationContext.getBean("serviceTeam");
 
-        // issue an emergency order
+        // issue an emergency order accidentally
         ApplicationContext orderContext = new AnnotationConfigApplicationContext(Commander.class);
         Commander commander = (Commander) orderContext.getBean("commander");
         Order emergencyOrder = (Order) orderContext.getBean("emergencyOrder");
-        emergencyOrder.send(30);
+        emergencyOrder.send(20);
 
-        // conversation between crew and commander
+        // conversation between crew and commander, achieved by dynamic proxy
         ServiceProxy serviceProxy = new ServiceProxy();
         serviceProxy.setRequest(crew);
         Request crewRequest = (Request) serviceProxy.getProxy();
