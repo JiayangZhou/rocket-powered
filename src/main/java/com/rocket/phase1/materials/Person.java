@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Scope;
 @Data
 @Scope("prototype")
 public class Person {
-    String name;
-    int age;
+    private int id;
+    private String name;
+    private int age;
 }
