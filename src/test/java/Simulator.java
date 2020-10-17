@@ -8,13 +8,8 @@ import java.io.IOException;
 public class Simulator {
     public static void main(String[] args) throws IOException {
         // testing log here
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationAop.xml", "spring-dao.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationAop.xml");
         LogService log = applicationContext.getBean("logService", LogService.class);
         log.add();
-
-
-        AudienceMapper audienceMapper = applicationContext.getBean("audienceMapper",AudienceMapper.class);
-
-
     }
 }

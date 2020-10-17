@@ -17,4 +17,5 @@ public class AudienceMapperImpl implements AudienceMapper{
         AudienceMapper audienceMapper = sqlSessionTemplate.getMapper(AudienceMapper.class);
         return audienceMapper.selectAudience();
     }
+
 }
